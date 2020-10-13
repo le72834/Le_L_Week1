@@ -9,9 +9,9 @@ nav {
         @include roundCorners(8px);
         @include addPadding (5px 12px);
         
-        a { cursor: pointer; text-decoration: none;}
+        a { cursor: pointer; text-decoration: none; color: white;}
     }
-    :hover {
-        a {color: pink;}
+    &:hover {
+        a { color: pink};
     }
 }

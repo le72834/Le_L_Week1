@@ -6,8 +6,8 @@ export default  {
     },
     John: {
         name: "John",
-        role: "super prof",
-        nickname: "just john"
+        role: "Super prof",
+        nickname: "Just john"
     },
     Joe: {
         name: "Joe",
