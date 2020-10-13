@@ -9,16 +9,16 @@ import Team from "./modules/DataModule.js";
  //console.log('loaded');
 
 //set up the XMLHttp object
-let myReg = new XMLHttpRequest;
+let myReq = new XMLHttpRequest;
 
 //make sure we can handle whatever data comeback, or any error
-myReg.addEventListener("readystatechange", handleRequest);
+myReq.addEventListener("readystatechange", handleRequest);
 
 //open a request and pass thru the URL of the data that we want
 myReq.open('GET', '../DataSet.json');
 
 //actually make the request
-myReg.send();
+myReq.send();
 
  //console.log(Team);
 
@@ -26,13 +26,18 @@ myReg.send();
  function handleRequest() {
      if(myReq.readyState === XMLHttpRequest.DONE) {
          //check status here and proceed 
-         if(myReg.status === 200) {
+         if(myReq.status === 200) {
+             debugger;
              //200 means done and dusted, ready to go with the dataset!
-             handleDataSet(myReq.responseText);
+             handleDataSet(JSON.parse(myReq.responseText));
          } else {
              //probably got some kind of error code, so handle that
              // a 404, 500 etc.. can 
+             console.error(`${myReq.status} : somthing done broke, son`);
          }
+     } else {
+         //request isn't ready yet, keep waiting...
+         console.log(`Request state: ${myReq.readyState}. Still processing...`);
      }
  }
 
@@ -43,7 +48,7 @@ myReg.send();
         userTemplate = document.querySelector("#profs-template").content;
 
     function handleDataSet(data) {
-        
+        debugger;
 
         for (let user in data) {
             debugger;
@@ -60,5 +65,5 @@ myReg.send();
         }
     }
 
-    handleDataSet(Team);  
+    //handleDataSet(Team);  
 })();
