@@ -2,22 +2,23 @@
     "Justin": {
         "name": "Justin",
         "role": "Coordinator",
-        "nickname": "Tervor"
+        "nickname": "Tervor",
+        "avatar":"justin.jpg"
         },
         "John": {
             "name": "John",
             "role": "super prof",
-            "nickname": "just john"
+            "nickname": "just john", "avatar":"john.jpg"
         },
         "Joe": {
             "name": "Joe",
             "role":"Prof",
-            "nickname": "Teddy Bear"
+            "nickname": "Teddy Bear", "avatar":"joe.jpg"
         },
     
         "Pan": {
             "name": "Pan",
             "role": "Code Ninja",
-            "nickname": "Spider Pan"
+            "nickname": "Spider Pan", "avatar":"pan.jpg"
         }
 }
