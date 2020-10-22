@@ -3,17 +3,11 @@
 
 
 //import NavSystem from "./modules/TheNavSystem";
+import {fetchData} from "./modules/DataMiner.js";
 
 (() => {
-    //start with a Fetch all
-    fetch('./DataSet.json')
-    .then(res => res.json()) //parse the JSON (translate) back to plain JS
-    .then(data => {
-        //this is our data (DataSet.json)
-        //converted to a plain JavaScript object
-        handleDataSet(data);
-    })
-    .catch((error) => console.log(error));
+    
+    
 
 
 
@@ -43,6 +37,7 @@
         console.log(data);
     }
     
+    fetchData('./DataSet.json').then(data => handleDataSet(data)).catch(err => console.log(err));
+    fetchData('./AnotherDataSet.json').then(data => handleMoreDataSet(data)).catch(err => console.log(err));
     
-    //handleDataSet(Team);  
 })();
