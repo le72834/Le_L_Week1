@@ -1,5 +1,5 @@
 //import here
-import Team from "./modules/DataModule.js";
+//import Team from "./modules/DataModule.js";
 
 
 //import NavSystem from "./modules/TheNavSystem";
@@ -24,22 +24,25 @@ import Team from "./modules/DataModule.js";
         userTemplate = document.querySelector("#user-template").content;
         debugger;
 
-        for (let user in myData) {
+        for (let user in data) {
             debugger;
             //make a copy of our template here and then populate the children(text element)
             //the static data from the Team object
             let currentUser = userTemplate.cloneNode(true),
             currentUserText = currentUser.querySelector('.user').children;
 
-            currentUserText[1].textContent = myData[user].name;
-            currentUserText[2].textContent = myData[user].role;
-            currentUserText[3].textContent = myData[user].nickname;
+            currentUserText[1].src = `images/${data[user].avatar}.jpg`;
+            currentUserText[2].textContent = data[user].name;
+            currentUserText[3].textContent = data[user].role;
+            currentUserText[4].textContent = data[user].nickname;
 
             //add this new user to the view
             
             userSection.appendChild(currentUser);
         }
+        console.log(data);
     }
-    console.log(data);
+    
+    
     //handleDataSet(Team);  
 })();
